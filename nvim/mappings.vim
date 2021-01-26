@@ -1,35 +1,48 @@
-" Copy to end of line
-nnoremap <S-y> y$
-
-" Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
+" LEADER MAPPINGS
+" -----------------------------------------------------------------------------
+let g:mapleader = " "
 
 " Use Leader + hjkl to resize windows
 nnoremap <leader>j  :resize -5<CR>
 nnoremap <leader>k  :resize +5<CR>
 nnoremap <leader>h  :vertical resize -5<CR>
 nnoremap <leader>l  :vertical resize +5<CR>
-nnoremap <leader>J  :resize -10<CR>
-nnoremap <leader>K  :resize +10<CR>
-nnoremap <leader>H  :vertical resize -10<CR>
-nnoremap <leader>L  :vertical resize +10<CR>
 
-" Easy CAPS
-inoremap <c-u> <ESC>viwUi
-nnoremap <c-u> viwU<Esc>
+" All windows same size
+nnoremap <silent> <leader>= <C-w>=
+
+" ???
+nnoremap <Leader>o o<Esc>^Da
+nnoremap <Leader>O O<Esc>^Da
+
+" Nerdtree Mirror the NERDTree before showing it. This makes it the same on all tabs.
+nnoremap <leader>n :NERDTreeMirror<CR>:NERDTreeToggle<CR>
+
+" Splits
+nnoremap <silent> <leader>s :split<CR>
+nnoremap <silent> <leader>v :vsplit<CR>
+nnoremap <silent> <leader>ts :term<CR>
+nnoremap <silent> <leader>tv :vsplit<CR>:term<CR>
+
+nnoremap <leader>pe :w<CR>:vertical terminal python3 %<CR>
+nnoremap <leader>pr :w<CR>:vertical terminal bash python3<CR>
+
+" nvim-ipy
+nnoremap <silent> <leader>c <Plug>(IPy-RunCell)
+nnoremap <silent> <leader>x <Plug>(IPy-Terminate)
+
+
+
+" NON LEADER MAPPINGS
+" -----------------------------------------------------------------------------
+" Better nav for omnicomplete
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")
 
 " TAB in general mode will move to text buffer
 nnoremap <TAB> :bnext<CR>
-" SHIFT-TAB will go back
 nnoremap <S-TAB> :bprevious<CR>
 
-" Alternate way to save
-nnoremap <C-s> :w<CR>
-" Alternate way to quit
-nnoremap <C-Q> :wq!<CR>
-" Use control-c instead of escape
-nnoremap <C-c> <Esc>
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
@@ -43,12 +56,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <Leader>o o<Esc>^Da
-nnoremap <Leader>O O<Esc>^Da
-
-" Nerdtree Mirror the NERDTree before showing it. This makes it the same on all tabs.
-nnoremap <S-n> :NERDTreeMirror<CR>:NERDTreeToggle<CR>
-
 " fuzzy searching
 nnoremap <C-p> :<C-u>FZF<CR>
 
@@ -57,3 +64,24 @@ if has('nvim')
     tnoremap <Esc> <C-\><C-n>
     tnoremap <C-v><Esc> <Esc>
 endif
+
+" Open NERDTree
+" nnoremap <S-n> :NERDTreeToggle<CR>
+
+" Easyalign
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Copy to end of line - Y to work as D and C work
+nnoremap <S-y> y$
+
+" Terminal escape
+tnoremap <C-[> <C-\><C-n>
+
+" Shift selction up and down
+vnoremap m :m '>+1<CR>gv=gv
+vnoremap M :m '<-2<CR>gv=gv
+

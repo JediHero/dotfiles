@@ -8,8 +8,12 @@ sudo apt-get install neovim
 # Install vim-plug
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Add aliases.sh to .bashrc
-cat ./aliases.sh >> .bashrc
+# Add aliases.sh to shell rc
+if $SHELL=/bin/zsh 
+    cat ./aliases.sh >> .zprofile
+else
+    cat ./aliases.sh >> .bashrc
+fi
 
 # Create init.vim
 mkdir -p '~/.config/nvim'
