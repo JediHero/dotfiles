@@ -49,6 +49,7 @@ export ATEK_SECRETS="$ATEK_ROOT/secrets"
 export ATEK_DATA="$ATEK_ROOT/data"
 export ATEK_CONNECTIONS="$ATEK_ROOT/connections"
 export ATEK_REPORTS="$HOME/OneDrive - AppraisalTek/Reports"
+export ATEK_LOGS="$ATEK_ROOT/logs"
 
 # Older user variables
 export ATEK02_MAIN="$HOME/.atek/atek02_main"

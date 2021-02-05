@@ -26,7 +26,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'https://github.com/plasticboy/vim-markdown'                      " Basic markdown support
     Plug 'https://github.com/godlygeek/tabular'                            " Needed for vim-markdown
     Plug 'https://github.com/dkarter/bullets.vim'                          " Auto creating bullets in markdown or other filetypes
-    Plug 'https://github.com/bfredl/nvim-ipy'                              " Two-way integration between Vim and IPython
+    Plug 'https://gitlab.com/HiPhish/repl.nvim'                            " Bring REPL support to nvim
+    " Plug 'https://github.com/bfredl/nvim-ipy'                              " Two-way integration between Vim and IPython
     " Plug 'https://github.com/szymonmaszke/vimpyter'                        " Edit a notebook from nvim
     " Plug 'https://github.com/rafi/awesome-vim-colorschemes'                " Colorschemes
     " Plug 'https://github.com/liuchengxu/vim-which-key'                     " Visual representation of leader keys
