@@ -6,7 +6,7 @@ export PATH=$PATH:$VIMPLUGS/fzf/bin
 
 # Avoid nesting nvim and change the terminal prompt
 if [ -n "$NVIM_LISTEN_ADDRESS"]; then
-  if [-x "$(command -v nvr)"]; then
+  if ["-x $(command -v nvr)"]; then
     alias nvim=nvr
     export PS1="nvim$ "
   else

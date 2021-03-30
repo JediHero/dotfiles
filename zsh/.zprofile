@@ -7,7 +7,7 @@ unset path
 # List all path entries you want before the "standard" PATH
 PATH="\
 $HOME/py-dev/atek:\
-$HOME/py-dev/atek/reports_scheduled:\
+$HOME/py-dev/atek/atek/reports:\ # Command Line commands for atek package
 $HOME/.pyenv/shims:\
 $HOME/.pyenv/bin:\
 $HOME/.pyenv/plugins/pyenv-virtualenv/shims:\
@@ -45,16 +45,17 @@ $PYTHONPATH"
 # Add user variables
 source $HOME/dotfiles/nvim/aliases.sh
 export ATEK_ROOT="$HOME/.atek"
-export ATEK_SECRETS="$ATEK_ROOT/secrets"
+export ATEK_VENV="$HOME/py-dev/atek/venv/bin/python"
 export ATEK_DATA="$ATEK_ROOT/data"
 export ATEK_CONNECTIONS="$ATEK_ROOT/connections"
 export ATEK_REPORTS="$HOME/OneDrive - AppraisalTek/Reports"
 export ATEK_LOGS="$ATEK_ROOT/logs"
+export GITHUB_TOKEN="c01e872605ecd05f1236b049fbbb415e12885190"
 
-# Older user variables
-export ATEK02_MAIN="$HOME/.atek/atek02_main"
-export ACADEMY_DOMO="$HOME/.atek/acad_domo"
-export ATEK_LOCAL="$HOME/.atek/local"
+# # Older user variables
+# export ATEK02_MAIN="$HOME/.atek/atek02_main"
+# export ACADEMY_DOMO="$HOME/.atek/acad_domo"
+# export ATEK_LOCAL="$HOME/.atek/local"
 
 # virtual env with neovim and pynvim installed
 export PYENV_ROOT="$HOME/.pyenv"
