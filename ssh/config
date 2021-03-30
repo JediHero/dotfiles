@@ -11,7 +11,7 @@ Host rusty-pi
   User pi
 
 Host docker-dev
-  HostName 167.99.175.164
+  HostName 143.198.226.179
   User root
   IdentityFile ~/.ssh/id_rsa
   ForwardAgent yes
@@ -36,13 +36,23 @@ Host brit
   Port 22
   ForwardAgent yes
 
-Host dw
+Host dw-work
   HostName 74.205.55.151
   User atek02
   IdentityFile ~/.ssh/idatk_rsa
   Port 24
   ProxyJump brit
-  ProxyCommand mysql atek02_main -u root
+  LocalForward 3306 localhost:3306
+  ProxyCommand nc -p 33333 %h %p
+
+Host dw-home
+  HostName 74.205.55.151
+  User atek02
+  IdentityFile ~/.ssh/idatk_rsa
+  Port 24
+  # ProxyJump brit
+  LocalForward 3306 localhost:3306
+  ProxyCommand nc -p 33333 %h %p
 
 Host domo_trial
   HostName 74.205.55.151
@@ -56,13 +66,16 @@ Host nas
   IdentityFile ~/.ssh/idatk_rsa
   Port 24
 
-Host domoac
-  HostName 74.205.55.151
-  User domoac
-  IdentityFile ~/.ssh/idatk_rsa
-  Port 24
+Host domoad
+  UseKeychain yes
   ForwardAgent yes
-  ProxyCommand mysql -u domoac atek02_main -p
+  HostName 74.205.55.151
+  Port 24
+  ProxyJump brit
+  User domoad
+  IdentityFile ~/.ssh/idatk_domoad
+  LocalForward 3306 localhost:3306
+  ProxyCommand nc -p 33333 %h %p
 
 Host hamidk_test
   HostName 66.210.241.39
@@ -71,4 +84,19 @@ Host hamidk_test
   Port 22
   ForwardAgent yes
 
-# making a change
+Host test_db
+  HostName 74.205.55.151
+  User atek02
+  IdentityFile ~/.ssh/idatk_rsa
+  Port 24
+  ForwardAgent yes
+  ProxyCommand nc -p 33333 %h %p
+
+Host db_server
+  HostName 74.205.55.151
+  Port 24
+  User atek02
+  IdentityFile ~/.ssh/idatk_rsa
+  ForwardAgent yes
+  ProxyCommand nc -p 33333 %h %p
+  # LocalForward 3306 localhost:3306

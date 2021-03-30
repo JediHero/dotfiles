@@ -113,7 +113,7 @@ export RPROMPT="%*"
 
 # alias
 alias ls='ls -G'
-alias ll='ls -lha'
+alias ll='ls -lash'
 alias la='ls -A'
 alias l='ls -CF'
 alias reports='cd "$ATEK_REPORTS"'
@@ -125,9 +125,15 @@ alias gp="git push"
 alias da="pyenv deactivate"
 alias wp="pyenv which python"
 alias dw="ssh -N rs1 -J brit -L 3306:localhost:3306"
+alias ae="source venv/bin/activate"
+alias de="deactivate venv"
 
 # Line movement
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
