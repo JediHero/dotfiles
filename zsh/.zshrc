@@ -108,23 +108,20 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # PROMPT
-export PROMPT="%n:%~ %# "
+export PROMPT="[%n@local]:%~$ "
 export RPROMPT="%*"
 
 # alias
 alias ls='ls -G'
 alias ll='ls -lash'
-alias la='ls -A'
-alias l='ls -CF'
 alias py='cd "$HOME/py-dev"'
 alias py-atek='cd "$HOME/py-dev/py-atek"'
 alias atek_env='cd "$HOME/py-dev/atek_env"'
 alias viz='/$HOME/py-dev/py-atek/venv/bin/python "$HOME/py-dev/py-atek/src/atek/core/viz.py"'
 alias daily='/$HOME/py-dev/py-atek/venv/bin/python "$HOME/py-dev/py-atek/src/atek/reports/daily_assignment.py"'
-alias sched='cd $HOME/py-dev/atek/reports_scheduled"'
+alias orders='/$HOME/py-dev/py-atek/venv/bin/python "$HOME/py-dev/py-atek/src/atek/database/orders.py"'
 alias gs="git status"
 alias gp="git push"
-alias da="pyenv deactivate"
 alias wp="pyenv which python"
 alias dw="ssh -N rs1 -J brit -L 3306:localhost:3306"
 alias ae="source venv/bin/activate"
