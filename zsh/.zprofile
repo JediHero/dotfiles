@@ -5,9 +5,9 @@ unset path
 # shims dir as the first line in the list of paths in the .zprofile file:
 
 # List all path entries you want before the "standard" PATH
+# $HOME/py-dev/atek:\
+# $HOME/py-dev/atek/atek/reports:\ # Command Line commands for atek package
 PATH="\
-$HOME/py-dev/atek:\
-$HOME/py-dev/atek/atek/reports:\ # Command Line commands for atek package
 $HOME/.pyenv/shims:\
 $HOME/.pyenv/bin:\
 $HOME/.pyenv/plugins/pyenv-virtualenv/shims:\
@@ -37,19 +37,15 @@ eval "$(pyenv init -)"
 export MANPATH=$(manpath)
 
 # Adding internal libraries to PYTHONPATH
-export PYTHONPATH="\
-$HOME/py-analysis:\
-$HOME/py-dev/atek:\
-$PYTHONPATH"
+# export PYTHONPATH="\
+# $HOME/py-analysis:\
+# $HOME/py-dev/atek:\
+# $PYTHONPATH"
 
 # Add user variables
 source $HOME/dotfiles/nvim/aliases.sh
-export ATEK_ROOT="$HOME/.atek"
-export ATEK_VENV="$HOME/py-dev/atek/venv/bin/python"
-export ATEK_DATA="$ATEK_ROOT/data"
-export ATEK_CONNECTIONS="$ATEK_ROOT/connections"
-export ATEK_REPORTS="$HOME/OneDrive - AppraisalTek/Reports"
-export ATEK_LOGS="$ATEK_ROOT/logs"
+source "$HOME/py-dev/atek_env/.base"
+
 export GITHUB_TOKEN="c01e872605ecd05f1236b049fbbb415e12885190"
 
 # # Older user variables
